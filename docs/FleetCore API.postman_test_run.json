@@ -1,0 +1,1820 @@
+{
+	"id": "4c848f7d-e8ec-45b8-8e4f-865d328175f0",
+	"name": "FleetCore API",
+	"timestamp": "2026-10-27T16:45:10.194Z",
+	"collection_id": "57124976-01dc3c1d-d52c-472d-9a3b-e4abcfa7a092",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 56,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-10-27T16:45:08.052Z",
+	"totalFail": 2,
+	"results": [
+		{
+			"id": "81e1f530-bd5a-488b-9a81-946204bfa3ee",
+			"name": "Health (200)",
+			"url": "http://localhost:3000/health",
+			"time": 25,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				25
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "1401e6c4-bc9a-4927-a74c-0c9a69c1836d",
+			"name": "Vehículos sin token (401)",
+			"url": "http://localhost:3000/vehicles",
+			"time": 6,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Código HTTP 401": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Código HTTP 401": true
+				}
+			]
+		},
+		{
+			"id": "604bfb3e-30dd-40fc-a7e0-8f26f43e071c",
+			"name": "Token inválido (401)",
+			"url": "http://localhost:3000/vehicles",
+			"time": 5,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Código HTTP 401": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Código HTTP 401": true
+				}
+			]
+		},
+		{
+			"id": "3768ada0-d522-4a42-a6a8-d5058393c513",
+			"name": "Registro (201)",
+			"url": "http://localhost:3000/auth/register",
+			"time": 82,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Código HTTP 201": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				82
+			],
+			"allTests": [
+				{
+					"Código HTTP 201": true
+				}
+			]
+		},
+		{
+			"id": "6979b201-1181-44aa-b1e2-c0300121cfff",
+			"name": "Registro con correo repetido (409)",
+			"url": "http://localhost:3000/auth/register",
+			"time": 9,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Código HTTP 409": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Código HTTP 409": true
+				}
+			]
+		},
+		{
+			"id": "a3b5d893-2f8f-4fa0-ba46-2b0a4d06d235",
+			"name": "Registro con rol inválido (400)",
+			"url": "http://localhost:3000/auth/register",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Código HTTP 400": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Código HTTP 400": true
+				}
+			]
+		},
+		{
+			"id": "c751acd5-21f4-4d24-a01e-5c1f3cd8d132",
+			"name": "Login ADMIN (200)",
+			"url": "http://localhost:3000/auth/login",
+			"time": 59,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				59
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "ec030e5c-8e60-4959-a310-dd9a5232e152",
+			"name": "Login TECHNICIAN 1 (200)",
+			"url": "http://localhost:3000/auth/login",
+			"time": 60,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				60
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "8087ad03-b2e8-4ebd-8026-00070a4abfdc",
+			"name": "Login TECHNICIAN 2 (200)",
+			"url": "http://localhost:3000/auth/login",
+			"time": 55,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				55
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "fdf508de-49ba-4e95-813e-14b35b21d764",
+			"name": "Login con contraseña incorrecta (401)",
+			"url": "http://localhost:3000/auth/login",
+			"time": 53,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Código HTTP 401": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				53
+			],
+			"allTests": [
+				{
+					"Código HTTP 401": true
+				}
+			]
+		},
+		{
+			"id": "49a23582-a300-488d-85e1-d440fbce2f0d",
+			"name": "Listar vehículos (200)",
+			"url": "http://localhost:3000/vehicles",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "28588690-142d-49dc-b996-13f114428127",
+			"name": "Crear vehículo (201)",
+			"url": "http://localhost:3000/vehicles",
+			"time": 8,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Código HTTP 201": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Código HTTP 201": true
+				}
+			]
+		},
+		{
+			"id": "6995e95a-fc83-4a08-ae1f-529d99f34a63",
+			"name": "Crear vehículo con placa repetida (409)",
+			"url": "http://localhost:3000/vehicles",
+			"time": 7,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Código HTTP 409": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Código HTTP 409": true
+				}
+			]
+		},
+		{
+			"id": "4ed17d38-14e3-4d9c-840c-047e893a6254",
+			"name": "Crear vehículo con datos inválidos (400)",
+			"url": "http://localhost:3000/vehicles",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Código HTTP 400": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Código HTTP 400": true
+				}
+			]
+		},
+		{
+			"id": "ab730a63-c653-4bb3-92e5-694ea8b2182e",
+			"name": "Consultar por placa (200)",
+			"url": "http://localhost:3000/vehicles/plate/ABC123",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "bd50e580-f513-4794-b9a2-84090af481b8",
+			"name": "Consultar por id inexistente (404)",
+			"url": "http://localhost:3000/vehicles/999",
+			"time": 6,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Código HTTP 404": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Código HTTP 404": true
+				}
+			]
+		},
+		{
+			"id": "d510dab3-e97c-4139-9597-3c32219790c6",
+			"name": "Actualizar vehículo (200)",
+			"url": "http://localhost:3000/vehicles/5",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "4db695b4-c0e6-4cd3-b78e-159e10a3d901",
+			"name": "Inactivar vehículo (200)",
+			"url": "http://localhost:3000/vehicles/5",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "c199e3c4-3700-4dbb-beb0-9ab369b8a0f6",
+			"name": "Inactivar vehículo en mantenimiento (409)",
+			"url": "http://localhost:3000/vehicles/3",
+			"time": 4,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Código HTTP 409": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Código HTTP 409": true
+				}
+			]
+		},
+		{
+			"id": "c6bf8c77-b98d-490f-b9fc-96dff02ae2ff",
+			"name": "Crear mecánico (201)",
+			"url": "http://localhost:3000/mechanics",
+			"time": 8,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Código HTTP 201": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Código HTTP 201": true
+				}
+			]
+		},
+		{
+			"id": "68e4a850-73ba-4f12-ac80-66737665ab43",
+			"name": "Crear mecánico con correo repetido (409)",
+			"url": "http://localhost:3000/mechanics",
+			"time": 5,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Código HTTP 409": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Código HTTP 409": true
+				}
+			]
+		},
+		{
+			"id": "c4c1855d-d04a-42ee-b109-e6f62f074d03",
+			"name": "Inactivar mecánico (200)",
+			"url": "http://localhost:3000/mechanics/4/status",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "9ced6840-7f11-41ed-a37b-5c4796dfcd33",
+			"name": "Listar mecánicos (200)",
+			"url": "http://localhost:3000/mechanics",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "1ae6cabf-a40c-4149-a5c6-4088c5c64adf",
+			"name": "Crear taller (201)",
+			"url": "http://localhost:3000/workshops",
+			"time": 7,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Código HTTP 201": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Código HTTP 201": true
+				}
+			]
+		},
+		{
+			"id": "e53fd1da-a734-49b6-9394-34a310aa89c9",
+			"name": "Listar talleres activos - técnico (200)",
+			"url": "http://localhost:3000/workshops",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "a79da66c-09b4-4609-a3bd-696d2289685b",
+			"name": "Crear mantenimiento (201)",
+			"url": "http://localhost:3000/maintenances",
+			"time": 18,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Código HTTP 201": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				18
+			],
+			"allTests": [
+				{
+					"Código HTTP 201": true
+				}
+			]
+		},
+		{
+			"id": "fa82ed15-3826-4117-bc1c-726d00541341",
+			"name": "Vehículo ya tiene mantenimiento activo (409)",
+			"url": "http://localhost:3000/maintenances",
+			"time": 7,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Código HTTP 409": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Código HTTP 409": true
+				}
+			]
+		},
+		{
+			"id": "db357200-342e-4481-880c-63f35356dd29",
+			"name": "Cruce de horario del mecánico 8:00 (409)",
+			"url": "http://localhost:3000/maintenances",
+			"time": 10,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Código HTTP 409": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Código HTTP 409": true
+				}
+			]
+		},
+		{
+			"id": "c4e79427-d5a9-4d4f-9a86-22bd6cd8f0c5",
+			"name": "Inicia justo a las 9:00 sin cruce (201)",
+			"url": "http://localhost:3000/maintenances",
+			"time": 12,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Código HTTP 201": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				12
+			],
+			"allTests": [
+				{
+					"Código HTTP 201": true
+				}
+			]
+		},
+		{
+			"id": "1557f237-b04b-44d8-bd2e-9d831332273b",
+			"name": "Vehículo INACTIVE (409)",
+			"url": "http://localhost:3000/maintenances",
+			"time": 5,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Código HTTP 409": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Código HTTP 409": true
+				}
+			]
+		},
+		{
+			"id": "a1b13938-b90b-431b-aab0-9cd269654cb5",
+			"name": "Mecánico inactivo (409)",
+			"url": "http://localhost:3000/maintenances",
+			"time": 5,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Código HTTP 409": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Código HTTP 409": true
+				}
+			]
+		},
+		{
+			"id": "2cdeed68-b8e7-495e-af0f-83d4c4edbf63",
+			"name": "Taller inactivo (409)",
+			"url": "http://localhost:3000/maintenances",
+			"time": 9,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Código HTTP 409": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Código HTTP 409": true
+				}
+			]
+		},
+		{
+			"id": "3af1e202-738b-4d10-975c-92d46d463905",
+			"name": "Vehículo inexistente (404)",
+			"url": "http://localhost:3000/maintenances",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Código HTTP 404": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Código HTTP 404": true
+				}
+			]
+		},
+		{
+			"id": "82ad7408-f494-4bfe-847e-c4efb1247511",
+			"name": "Kilometraje menor al del vehículo (400)",
+			"url": "http://localhost:3000/maintenances",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Código HTTP 400": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Código HTTP 400": true
+				}
+			]
+		},
+		{
+			"id": "fa4329d2-cd8a-4154-9ec6-f5307f68ca00",
+			"name": "Fecha inválida (400)",
+			"url": "http://localhost:3000/maintenances",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Código HTTP 400": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Código HTTP 400": true
+				}
+			]
+		},
+		{
+			"id": "4f498a59-46eb-4c24-bcd5-6c1040d6669a",
+			"name": "Técnico 2: mis mantenimientos (200)",
+			"url": "http://localhost:3000/maintenances/my",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "3212cf13-9103-4c5d-91c4-d7947afa57cb",
+			"name": "SCHEDULED a COMPLETED no permitido (409)",
+			"url": "http://localhost:3000/maintenances/3/status",
+			"time": 8,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Código HTTP 409": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Código HTTP 409": true
+				}
+			]
+		},
+		{
+			"id": "11ba3272-7ca5-4b7b-9636-d0e6a67cbea5",
+			"name": "Técnico 1 en mantenimiento ajeno (403)",
+			"url": "http://localhost:3000/maintenances/3/status",
+			"time": 9,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Código HTTP 403": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Código HTTP 403": true
+				}
+			]
+		},
+		{
+			"id": "299c3f32-229a-40d6-b566-21b37abc79f5",
+			"name": "SCHEDULED a IN_PROGRESS (200)",
+			"url": "http://localhost:3000/maintenances/3/status",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				14
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "aa2863d7-473c-4669-9d93-8454e83de921",
+			"name": "Vehículo 1 queda IN_MAINTENANCE (200)",
+			"url": "http://localhost:3000/vehicles/1",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "d826e921-d376-4c9d-b03b-29e4e7e45013",
+			"name": "Completar sin datos de cierre (400)",
+			"url": "http://localhost:3000/maintenances/3/status",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Código HTTP 400": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Código HTTP 400": true
+				}
+			]
+		},
+		{
+			"id": "15d9345b-dcc0-4998-a2bd-335d1d2d35b3",
+			"name": "Completar con datos (200)",
+			"url": "http://localhost:3000/maintenances/3/status",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				14
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "29c47907-410d-41ab-a2f1-5f7b61d30b8b",
+			"name": "Vehículo 1 vuelve a AVAILABLE (200)",
+			"url": "http://localhost:3000/vehicles/1",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "5290aa0c-b467-4f6d-ac0d-f0d73504c852",
+			"name": "COMPLETED no regresa (409)",
+			"url": "http://localhost:3000/maintenances/3/status",
+			"time": 9,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Código HTTP 409": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Código HTTP 409": true
+				}
+			]
+		},
+		{
+			"id": "c0da085a-99b1-4550-8b0e-b50129ea7cdd",
+			"name": "Cancelar mantenimiento programado (200)",
+			"url": "http://localhost:3000/maintenances/4/status",
+			"time": 12,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				12
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "19da51dd-be07-4959-918d-48e43dc2a6c7",
+			"name": "CANCELLED no pasa a IN_PROGRESS (409)",
+			"url": "http://localhost:3000/maintenances/4/status",
+			"time": 8,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Código HTTP 409": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Código HTTP 409": true
+				}
+			]
+		},
+		{
+			"id": "6c0bd73a-06d4-4b1f-9460-e03a149561df",
+			"name": "Técnico en /vehicles (403)",
+			"url": "http://localhost:3000/vehicles",
+			"time": 3,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Código HTTP 403": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Código HTTP 403": true
+				}
+			]
+		},
+		{
+			"id": "ca913d20-f4ec-4c6d-8fd8-00f2a3e6a28c",
+			"name": "Técnico crea taller (403)",
+			"url": "http://localhost:3000/workshops",
+			"time": 3,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Código HTTP 403": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Código HTTP 403": true
+				}
+			]
+		},
+		{
+			"id": "76b88e5f-7002-4a88-ba3b-113b335ab957",
+			"name": "Admin en /maintenances/my (403)",
+			"url": "http://localhost:3000/maintenances/my",
+			"time": 3,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Código HTTP 403": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Código HTTP 403": true
+				}
+			]
+		},
+		{
+			"id": "1f659aa7-3b37-40e1-aa7d-b55ff3a72081",
+			"name": "Todos los mantenimientos (200)",
+			"url": "http://localhost:3000/maintenances",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "660d8d65-2c6d-4486-bf30-39a51fe92b30",
+			"name": "Mantenimientos activos (200)",
+			"url": "http://localhost:3000/maintenances/active",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "ff207f1e-30dc-454f-bc9f-b15f478dc1af",
+			"name": "Por vehículo (200)",
+			"url": "http://localhost:3000/maintenances/vehicle/1",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "813c84af-f27c-48bf-ac29-11538f797fb6",
+			"name": "Historial del vehículo (200)",
+			"url": "http://localhost:3000/maintenances/vehicle/1/history",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "18e9925d-a926-46de-8305-e27c203d09b5",
+			"name": "Por mecánico (200)",
+			"url": "http://localhost:3000/maintenances/mechanic/2",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Código HTTP 200": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": true
+				}
+			]
+		},
+		{
+			"id": "33796e16-fc83-4258-b118-1240d82de7ac",
+			"name": "Sin API key (401)",
+			"url": "http://localhost:3000/external/vehicles/ABC123/maintenances",
+			"time": 3,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Código HTTP 401": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Código HTTP 401": true
+				}
+			]
+		},
+		{
+			"id": "7d1cbbd9-9f26-4584-83b4-92d9660f42c5",
+			"name": "API key incorrecta (401)",
+			"url": "http://localhost:3000/external/vehicles/ABC123/maintenances",
+			"time": 3,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Código HTTP 401": true
+			},
+			"testPassFailCounts": {
+				"Código HTTP 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Código HTTP 401": true
+				}
+			]
+		},
+		{
+			"id": "a0a09624-479b-4654-8c30-b7733410268f",
+			"name": "API key correcta (200)",
+			"url": "http://localhost:3000/external/vehicles/ABC123/maintenances",
+			"time": 2,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Código HTTP 200": false
+			},
+			"testPassFailCounts": {
+				"Código HTTP 200": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Código HTTP 200": false
+				}
+			]
+		},
+		{
+			"id": "dd01080a-cfb9-4d0e-8d50-1c9f571bd8b3",
+			"name": "Placa inexistente (404)",
+			"url": "http://localhost:3000/external/vehicles/NOPE/maintenances",
+			"time": 4,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Código HTTP 404": false
+			},
+			"testPassFailCounts": {
+				"Código HTTP 404": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Código HTTP 404": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 699,
+	"collection": {
+		"requests": [
+			{
+				"id": "81e1f530-bd5a-488b-9a81-946204bfa3ee",
+				"method": "GET"
+			},
+			{
+				"id": "1401e6c4-bc9a-4927-a74c-0c9a69c1836d",
+				"method": "GET"
+			},
+			{
+				"id": "604bfb3e-30dd-40fc-a7e0-8f26f43e071c",
+				"method": "GET"
+			},
+			{
+				"id": "3768ada0-d522-4a42-a6a8-d5058393c513",
+				"method": "POST"
+			},
+			{
+				"id": "6979b201-1181-44aa-b1e2-c0300121cfff",
+				"method": "POST"
+			},
+			{
+				"id": "a3b5d893-2f8f-4fa0-ba46-2b0a4d06d235",
+				"method": "POST"
+			},
+			{
+				"id": "c751acd5-21f4-4d24-a01e-5c1f3cd8d132",
+				"method": "POST"
+			},
+			{
+				"id": "ec030e5c-8e60-4959-a310-dd9a5232e152",
+				"method": "POST"
+			},
+			{
+				"id": "8087ad03-b2e8-4ebd-8026-00070a4abfdc",
+				"method": "POST"
+			},
+			{
+				"id": "fdf508de-49ba-4e95-813e-14b35b21d764",
+				"method": "POST"
+			},
+			{
+				"id": "49a23582-a300-488d-85e1-d440fbce2f0d",
+				"method": "GET"
+			},
+			{
+				"id": "28588690-142d-49dc-b996-13f114428127",
+				"method": "POST"
+			},
+			{
+				"id": "6995e95a-fc83-4a08-ae1f-529d99f34a63",
+				"method": "POST"
+			},
+			{
+				"id": "4ed17d38-14e3-4d9c-840c-047e893a6254",
+				"method": "POST"
+			},
+			{
+				"id": "ab730a63-c653-4bb3-92e5-694ea8b2182e",
+				"method": "GET"
+			},
+			{
+				"id": "bd50e580-f513-4794-b9a2-84090af481b8",
+				"method": "GET"
+			},
+			{
+				"id": "d510dab3-e97c-4139-9597-3c32219790c6",
+				"method": "PATCH"
+			},
+			{
+				"id": "4db695b4-c0e6-4cd3-b78e-159e10a3d901",
+				"method": "DELETE"
+			},
+			{
+				"id": "c199e3c4-3700-4dbb-beb0-9ab369b8a0f6",
+				"method": "DELETE"
+			},
+			{
+				"id": "c6bf8c77-b98d-490f-b9fc-96dff02ae2ff",
+				"method": "POST"
+			},
+			{
+				"id": "68e4a850-73ba-4f12-ac80-66737665ab43",
+				"method": "POST"
+			},
+			{
+				"id": "c4c1855d-d04a-42ee-b109-e6f62f074d03",
+				"method": "PATCH"
+			},
+			{
+				"id": "9ced6840-7f11-41ed-a37b-5c4796dfcd33",
+				"method": "GET"
+			},
+			{
+				"id": "1ae6cabf-a40c-4149-a5c6-4088c5c64adf",
+				"method": "POST"
+			},
+			{
+				"id": "e53fd1da-a734-49b6-9394-34a310aa89c9",
+				"method": "GET"
+			},
+			{
+				"id": "a79da66c-09b4-4609-a3bd-696d2289685b",
+				"method": "POST"
+			},
+			{
+				"id": "fa82ed15-3826-4117-bc1c-726d00541341",
+				"method": "POST"
+			},
+			{
+				"id": "db357200-342e-4481-880c-63f35356dd29",
+				"method": "POST"
+			},
+			{
+				"id": "c4e79427-d5a9-4d4f-9a86-22bd6cd8f0c5",
+				"method": "POST"
+			},
+			{
+				"id": "1557f237-b04b-44d8-bd2e-9d831332273b",
+				"method": "POST"
+			},
+			{
+				"id": "a1b13938-b90b-431b-aab0-9cd269654cb5",
+				"method": "POST"
+			},
+			{
+				"id": "2cdeed68-b8e7-495e-af0f-83d4c4edbf63",
+				"method": "POST"
+			},
+			{
+				"id": "3af1e202-738b-4d10-975c-92d46d463905",
+				"method": "POST"
+			},
+			{
+				"id": "82ad7408-f494-4bfe-847e-c4efb1247511",
+				"method": "POST"
+			},
+			{
+				"id": "fa4329d2-cd8a-4154-9ec6-f5307f68ca00",
+				"method": "POST"
+			},
+			{
+				"id": "4f498a59-46eb-4c24-bcd5-6c1040d6669a",
+				"method": "GET"
+			},
+			{
+				"id": "3212cf13-9103-4c5d-91c4-d7947afa57cb",
+				"method": "PATCH"
+			},
+			{
+				"id": "11ba3272-7ca5-4b7b-9636-d0e6a67cbea5",
+				"method": "PATCH"
+			},
+			{
+				"id": "299c3f32-229a-40d6-b566-21b37abc79f5",
+				"method": "PATCH"
+			},
+			{
+				"id": "aa2863d7-473c-4669-9d93-8454e83de921",
+				"method": "GET"
+			},
+			{
+				"id": "d826e921-d376-4c9d-b03b-29e4e7e45013",
+				"method": "PATCH"
+			},
+			{
+				"id": "15d9345b-dcc0-4998-a2bd-335d1d2d35b3",
+				"method": "PATCH"
+			},
+			{
+				"id": "29c47907-410d-41ab-a2f1-5f7b61d30b8b",
+				"method": "GET"
+			},
+			{
+				"id": "5290aa0c-b467-4f6d-ac0d-f0d73504c852",
+				"method": "PATCH"
+			},
+			{
+				"id": "c0da085a-99b1-4550-8b0e-b50129ea7cdd",
+				"method": "PATCH"
+			},
+			{
+				"id": "19da51dd-be07-4959-918d-48e43dc2a6c7",
+				"method": "PATCH"
+			},
+			{
+				"id": "6c0bd73a-06d4-4b1f-9460-e03a149561df",
+				"method": "GET"
+			},
+			{
+				"id": "ca913d20-f4ec-4c6d-8fd8-00f2a3e6a28c",
+				"method": "POST"
+			},
+			{
+				"id": "76b88e5f-7002-4a88-ba3b-113b335ab957",
+				"method": "GET"
+			},
+			{
+				"id": "1f659aa7-3b37-40e1-aa7d-b55ff3a72081",
+				"method": "GET"
+			},
+			{
+				"id": "660d8d65-2c6d-4486-bf30-39a51fe92b30",
+				"method": "GET"
+			},
+			{
+				"id": "ff207f1e-30dc-454f-bc9f-b15f478dc1af",
+				"method": "GET"
+			},
+			{
+				"id": "813c84af-f27c-48bf-ac29-11538f797fb6",
+				"method": "GET"
+			},
+			{
+				"id": "18e9925d-a926-46de-8305-e27c203d09b5",
+				"method": "GET"
+			},
+			{
+				"id": "33796e16-fc83-4258-b118-1240d82de7ac",
+				"method": "GET"
+			},
+			{
+				"id": "7d1cbbd9-9f26-4584-83b4-92d9660f42c5",
+				"method": "GET"
+			},
+			{
+				"id": "a0a09624-479b-4654-8c30-b7733410268f",
+				"method": "GET"
+			},
+			{
+				"id": "dd01080a-cfb9-4d0e-8d50-1c9f571bd8b3",
+				"method": "GET"
+			}
+		]
+	}
+}

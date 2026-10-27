@@ -1,5 +1,4 @@
-# Lo que NO se copia dentro de la imagen de Docker.
-# Importante: el .env tiene contraseñas y no debe quedar guardado en la imagen.
+
 node_modules
 dist
 .env
