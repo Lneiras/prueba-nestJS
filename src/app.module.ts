@@ -1,12 +1,19 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
+import { AllExceptionsFilter } from './common/filters/all-exceptions.filter';
+import { ResponseInterceptor } from './common/interceptors/response.interceptor';
 import { HealthModule } from './health/health.module';
+import { MaintenancesModule } from './maintenances/maintenances.module';
+import { MechanicsModule } from './mechanics/mechanics.module';
+import { UsersModule } from './users/users.module';
+import { VehiclesModule } from './vehicles/vehicles.module';
+import { WorkshopsModule } from './workshops/workshops.module';
 
-// Módulo raíz: aquí se conectan todas las piezas de la aplicación.
 @Module({
   imports: [
-    // Lee el archivo .env y deja sus variables disponibles en toda la aplicación.
     // "isGlobal" evita tener que importar ConfigModule en cada módulo.
     ConfigModule.forRoot({ isGlobal: true }),
 
@@ -17,28 +24,36 @@ import { HealthModule } from './health/health.module';
       useFactory: (config: ConfigService) => ({
         type: 'postgres',
         host: config.get<string>('DB_HOST'),
-        // Las variables de entorno siempre son texto, por eso convertimos el puerto a número.
         port: Number(config.get<string>('DB_PORT')),
         username: config.get<string>('DB_USER'),
         password: config.get<string>('DB_PASSWORD'),
         database: config.get<string>('DB_NAME'),
         // Amazon RDS con PostgreSQL 15 o superior EXIGE conexión cifrada (SSL).
         // Por eso en AWS usamos DB_SSL=true y en local DB_SSL=false.
-        // rejectUnauthorized: false cifra la conexión sin verificar el certificado de RDS.
-        // Sirve para este proyecto; en producción real se usaría el certificado oficial de RDS.
         ssl:
           config.get<string>('DB_SSL') === 'true'
             ? { rejectUnauthorized: false }
             : false,
         // Registra automáticamente las entidades que se declaren con forFeature.
         autoLoadEntities: true,
-        // Crea y actualiza las tablas según las entidades. Es cómodo para empezar,
-        // pero en producción se usarían migraciones.
+        // Crea y actualiza las tablas según las entidades
         synchronize: true,
       }),
     }),
 
     HealthModule,
+    AuthModule,
+    UsersModule,
+    VehiclesModule,
+    MechanicsModule,
+    WorkshopsModule,
+    MaintenancesModule,
+  ],
+  providers: [
+    // Filtro global: todos los errores salen con el mismo formato.
+    { provide: APP_FILTER, useClass: AllExceptionsFilter },
+    // Interceptor global: todas las respuestas exitosas salen con el mismo formato.
+    { provide: APP_INTERCEPTOR, useClass: ResponseInterceptor },
   ],
 })
 export class AppModule {}
