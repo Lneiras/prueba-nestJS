@@ -1,0 +1,54 @@
+# Entorno LOCAL: levanta la API y una base de datos PostgreSQL en tu PC.
+#   docker compose up -d --build
+# Las variables ${...} se leen automáticamente del archivo .env
+name: proyecto-base-local
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      # Puerto de tu PC : puerto dentro del contenedor.
+      # Sirve para conectarte con un cliente SQL o con npm run start:dev.
+      - '${DB_PORT}:5432'
+    volumes:
+      # Guarda los datos para que no se pierdan al reiniciar el contenedor
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      # Docker pregunta a PostgreSQL si ya está listo para recibir conexiones
+      test: ['CMD-SHELL', 'pg_isready -U ${DB_USER} -d ${DB_NAME}']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      # Dentro de Docker, la API encuentra la base por el NOMBRE del servicio ("db"),
+      # no por localhost. Estas líneas pisan lo que diga el .env.
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_SSL: 'false'
+      PORT: 3000
+    ports:
+      - '${PORT}:3000'
+    depends_on:
+      db:
+        # La API espera a que la base esté sana antes de arrancar
+        condition: service_healthy
+    healthcheck:
+      # Docker llama a /health: si responde con error, el contenedor se marca "unhealthy"
+      test: ['CMD', 'wget', '-qO-', 'http://localhost:3000/health']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  db_data:

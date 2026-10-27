@@ -1,0 +1,25 @@
+# Entorno AWS (EC2): levanta SOLO la API. La base de datos es Amazon RDS, que está fuera de Docker.
+#   docker compose -f docker-compose.prod.yml up -d --build --wait
+# El .env de la EC2 debe tener DB_HOST = endpoint de RDS y DB_SSL=true.
+# Jenkins ejecuta este mismo comando en cada despliegue (ver Jenkinsfile).
+name: proyecto-base
+
+services:
+  app:
+    build: .
+    container_name: proyecto-app
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      # Dentro del contenedor la API siempre escucha en el 3000
+      PORT: 3000
+    ports:
+      - '3000:3000'
+    healthcheck:
+      # "up --wait" espera a que este chequeo pase; si falla, el despliegue falla.
+      # /health responde 200 solo si la API puede hablar con RDS.
+      test: ['CMD', 'wget', '-qO-', 'http://localhost:3000/health']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s

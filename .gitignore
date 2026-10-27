@@ -1,0 +1,21 @@
+# Compilado
+/dist
+/node_modules
+
+# Variables de entorno reales (solo se sube .env.example)
+.env
+
+# Llaves de AWS: NUNCA subirlas al repositorio
+*.pem
+
+# Logs
+*.log
+npm-debug.log*
+
+# Cobertura de pruebas
+/coverage
+
+# Archivos del sistema y editores
+.DS_Store
+.idea
+.vscode

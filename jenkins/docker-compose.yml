@@ -1,0 +1,25 @@
+# Jenkins en un contenedor, en la misma EC2 donde corre la API.
+# Se levanta UNA sola vez, desde la raíz del proyecto:
+#   docker compose -f jenkins/docker-compose.yml up -d --build
+name: jenkins
+
+services:
+  jenkins:
+    build: .
+    container_name: jenkins
+    restart: unless-stopped
+    # Corre como root para poder usar el socket de Docker de la EC2 sin configurar grupos.
+    # Ojo: quien controla el socket de Docker controla toda la máquina. Es aceptable
+    # para este proyecto, pero por eso el puerto 8080 solo debe abrirse a tu IP.
+    user: root
+    ports:
+      # Interfaz web de Jenkins
+      - '8080:8080'
+    volumes:
+      # Guarda la configuración, los plugins y las credenciales de Jenkins
+      - jenkins_home:/var/jenkins_home
+      # Comparte el Docker de la EC2 con Jenkins: así sus builds crean contenedores en la EC2
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  jenkins_home:
