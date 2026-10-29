@@ -1,8 +1,10 @@
+// IsBoolean: validador que comprueba que el valor sea true o false.
 import { IsBoolean } from 'class-validator';
 
-// Con esto  activamos o ponemos inactivo un mecánico o un taller.
-// Ejemplo: { "isActive": false }
+// DTO para activar o inactivar un mecánico o un taller.
+// Ejemplo de cuerpo de la petición: { "isActive": false }
 export class UpdateActiveDto {
+  // El campo debe llegar obligatoriamente como booleano.
   @IsBoolean()
   isActive: boolean;
 }
